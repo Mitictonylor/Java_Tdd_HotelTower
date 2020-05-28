@@ -28,4 +28,34 @@ public class BedroomTest {
         bedroom.addGuest(guest1);
         assertEquals(3, bedroom.countGuest());
     }
+    @Test
+    public void canCountGuests(){
+        bedroom.addGuest(guest);
+        bedroom.addGuest(guest2);
+        assertEquals(2, bedroom.countGuest());
+
+    }
+    @Test
+    public void canNotAddGuestBecauseOverCapacity() {
+        bedroom2.addGuest(guest);
+        bedroom2.addGuest(guest2);
+        assertEquals(1, bedroom2.countGuest());
+    }
+    @Test
+    public void canRemoveGuest() {
+        bedroom.addGuest(guest);
+        bedroom.addGuest(guest2);
+        bedroom.addGuest(guest1);
+        bedroom.removeGuest();
+        assertEquals(0, bedroom.countGuest());
+    }
+    @Test
+    public void theRoomIsEmpty(){
+        assertEquals(true, bedroom.isEmpty());
+    }
+    @Test
+    public void theRoomIsNotEmpty(){
+        bedroom.addGuest(guest);
+        assertEquals(false, bedroom.isEmpty());
+    }
 }

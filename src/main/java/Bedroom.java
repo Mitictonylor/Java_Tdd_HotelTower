@@ -39,4 +39,10 @@ public class Bedroom {
     public int countGuest() {
         return this.guest.size();
     }
+    public void removeGuest() {
+        this.guest.clear();
+    }
+    public boolean isEmpty(){
+        return this.countGuest() == 0;
+    }
 }
